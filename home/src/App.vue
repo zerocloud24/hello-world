@@ -1,16 +1,53 @@
-<template>
-  <div id="app">
-    <h1 class="f316-font">Hello Zerocloud</h1>
-    <h2>D.va</h2>
-    <h2 class="f316-font">D.va</h2>
-  </div>
+<template lang="pug">
+  #app
+    NavBar(:menus="menus", v-model="currentTab")
+    components(:is="current")
 </template>
 
 <script>
+import NavBar from '@/components/navbar'
+
+import Home from '@/pages/home'
+import Profile from '@/pages/profile'
 
 export default {
   name: 'App',
+  data () {
+    return {
+      currentTab: 'home'
+    }
+  },
   components: {
+    NavBar
+  },
+  computed: {
+    current () {
+      return this.menus.find(item => item.value === this.currentTab).component
+    },
+    menus () {
+      return [
+        {
+          value: 'home',
+          label: '首页',
+          component: Home
+        },
+        {
+          value: 'profile',
+          label: '简介',
+          component: Profile
+        },
+        {
+          value: 'works',
+          label: '作品',
+          component: ''
+        },
+        {
+          value: 'callme',
+          label: '联系我',
+          component: ''
+        }
+      ]
+    }
   }
 }
 </script>
@@ -18,15 +55,19 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
+body {
+  margin: 0;
+  min-width: 1080px;
+  overflow-x: auto;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #1E0F52;
+  font-size: 14px;
 }
-
 
 @font-face {
   font-family: mFont;
@@ -41,5 +82,29 @@ export default {
 
 .f316-font {
   font-family: mFont;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.font-16 {
+  font-size: 16px;
 }
 </style>
