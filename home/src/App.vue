@@ -55,6 +55,10 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   min-width: 1080px;
@@ -106,5 +110,15 @@ body {
 
 .font-16 {
   font-size: 16px;
+}
+
+.primary-btn {
+  display: inline-block;
+  cursor: pointer;
+  background-color: #5347CA;
+  padding: 6px 15px;
+  box-shadow: 0px 6px 20px 0px rgb(123 111 247 / 46%);
+  border-radius: 5px;
+  color: #fff;
 }
 </style>
