@@ -61,7 +61,7 @@ export default {
 
 body {
   margin: 0;
-  min-width: 1080px;
+  min-width: 1280px;
   overflow-x: auto;
 }
 
@@ -120,5 +120,9 @@ body {
   box-shadow: 0px 6px 20px 0px rgb(123 111 247 / 46%);
   border-radius: 5px;
   color: #fff;
+}
+
+.text-yellow {
+  color: #FEBC5B;
 }
 </style>
