@@ -125,4 +125,12 @@ body {
 .text-yellow {
   color: #FEBC5B;
 }
+
+.text-center {
+  text-align: center;
+}
+
+.small {
+  font-size: 12px;
+}
 </style>

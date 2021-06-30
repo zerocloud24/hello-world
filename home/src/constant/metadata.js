@@ -33,3 +33,74 @@ export const SKILL_LIST = () => ([
     iconUrl: 'icon3.png'
   }
 ])
+
+export const SKILL_BAR_DATA = () => ([
+  {
+    name: 'PS/Sketch',
+    percent: 90
+  },
+  {
+    name: 'AI',
+    percent: 80
+  },
+  {
+    name: 'AE',
+    percent: 35
+  },
+  {
+    name: 'Figma',
+    percent: 45
+  },
+  {
+    name: 'Axure',
+    percent: 45
+  }
+])
+
+export const SKILL_PIE_DATA = () => ([
+  {
+    name: '学习能力超棒!',
+    percent: 80,
+    desc: '近期工作方面主要学习方向-插画；业余学习方向-游戏剪辑。',
+    color: '#FEBC5B'
+  },
+  {
+    name: '统筹能力好',
+    percent: 70,
+    desc: '做事情条理清晰，顾全大局。主持过公司周年庆、负责过音乐节舞台协助工作。',
+    color: '#E96F94'
+  },
+  {
+    name: '情绪管理强',
+    percent: 75,
+    desc: '心理学毕业，考取了心理咨询师三级证书，有良好的情绪调节能力。',
+    color: '#5B89FE'
+  }
+])
+
+export const WORK_LIST = () => ([
+  {
+    name: '扁平人物情绪版',
+    desc: '一套扁平的人物插画情绪版设计，包括工作、金融…',
+    time: '2021.06.03',
+    imgUrl: ''
+  },
+  {
+    name: '云链钱包APP',
+    desc: '云链钱包是一个去中心化数字资产钱包…',
+    time: '2021.05.26',
+    imgUrl: ''
+  },
+  {
+    name: 'Bingo交易所',
+    desc: 'Bingo交易所是一个数字货 币交易平台…',
+    time: '正在开发',
+    imgUrl: ''
+  },
+  {
+    name: 'Bingo交易所',
+    desc: 'Bingo交易所是一个数字货 币交易平台…',
+    time: '正在开发',
+    imgUrl: ''
+  }
+])
