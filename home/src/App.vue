@@ -111,6 +111,11 @@ body {
        url("~@/assets/fonts/316-CAI978.svg#316-CAI978") format("svg");
 }
 
+.container {
+  width: 58.3rem;
+  margin: 0 auto;
+}
+
 .f316-font {
   font-family: mFont;
 }
@@ -155,5 +160,9 @@ body {
 
 .small {
   font-size: 0.75rem;
+}
+
+.font-600 {
+  font-weight: 600;
 }
 </style>

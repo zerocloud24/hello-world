@@ -27,7 +27,7 @@ export default {
       .f316-font.welcome-en.font-max {{ TextMap.welcomeEn }}
       .welcome-cn.font-l {{ TextMap.welcomeCn }}
       .primary-btn 了解更多 &gt;&gt;
-  .home-container
+  .container
     .experie-box.d-flex
       .experie-item.d-flex.align-items-center(
         v-for="(item, idx) in experieList",
@@ -93,10 +93,6 @@ export default {
   }
 }
 
-.home-container {
-  width: 58.3rem;
-  margin: 0 auto;
-}
 .experie-box {
   justify-content: space-between;
   background-color: #fff;
