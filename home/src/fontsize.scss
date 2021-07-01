@@ -1,0 +1,62 @@
+// 主要用到的字体大小
+// 1920宽度下，24px -> 1rem
+// 1280宽度下，16px -> 1rem
+
+// 3.59rem  // banner最大标题字号   font-max:
+// 3rem 经验数字字号
+
+// 2.17rem  work页底部电话号邮箱字体
+// 2.04rem  主要副标题字号、底部 be my.. 文案
+// 2rem work名称标题文字
+
+// 1.92rem 简介页的主要副标题字号
+// 1.75rem 经历信息标题文字
+// 1.67rem  个人经历文字说明、work分类文字
+// 1.5 rem  最大号标题的说明文字、logo文字、底部说明文字、经历内容文字、 简介页底部文字、work时间文字
+
+// 1.34rem 小的英文标题字号
+// 1.33rem 简介页的信息文字
+
+// 1.25 技能标题字号、底部文案标题、简介页的标题说明文字、work说明文字
+
+// 1.17 rem  导航文字、work标题、@一只..文案
+// 1rem  works说明文字
+// 1.08 rem 技能名称字号
+// 1rem 经验说明文字
+
+// 0.96rem  内容按钮中的文字
+// 0.94rem  导航按钮中的文字
+// 0.92rem 大段文字字号
+
+// 0.83rem 饼图名称字号、works时间文字
+// 0.79rem 小的文案说明字号
+// 0.75rem 饼图说明字号
+
+.font-max {
+  font-size: 3.58rem;
+}
+
+.font-second {
+  font-size: 3rem;
+}
+
+.font-third {
+  font-size: 2rem;
+}
+
+.font-l {
+  font-size: 1.5rem;
+}
+.font-m {
+  font-size: 1.25rem;
+}
+.font-s {
+  font-size: 1rem;
+}
+.font-xs {
+  font-size: 0.75rem;
+}
+
+.font-204 {
+  font-size: 2.04rem;
+}

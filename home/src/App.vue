@@ -59,9 +59,37 @@ export default {
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
+@media only screen and (max-width: 960px){
+  html {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1280px){
+  html {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 1280px) and (max-width: 1920px){
+  html {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 1920px){
+  html {
+    font-size: 24px;
+  }
+}
+
 body {
   margin: 0;
-  min-width: 1280px;
+  min-width: 960px;
   overflow-x: auto;
 }
 
@@ -70,7 +98,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #1E0F52;
-  font-size: 14px;
 }
 
 @font-face {
@@ -108,17 +135,13 @@ body {
   align-items: center;
 }
 
-.font-16 {
-  font-size: 16px;
-}
-
 .primary-btn {
   display: inline-block;
   cursor: pointer;
   background-color: #5347CA;
-  padding: 6px 15px;
-  box-shadow: 0px 6px 20px 0px rgb(123 111 247 / 46%);
-  border-radius: 5px;
+  padding: 0.375rem 1rem;
+  box-shadow: 0 0.375rem 1.25rem 0 rgb(123 111 247 / 46%);
+  border-radius: 0.375rem;
   color: #fff;
 }
 
@@ -131,6 +154,6 @@ body {
 }
 
 .small {
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 </style>

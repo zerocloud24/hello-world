@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 
+import '@/fontsize.scss'
+
 import TextMap from '@/constant/textmap.js'
 
 Vue.config.productionTip = false

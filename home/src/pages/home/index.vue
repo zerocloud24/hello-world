@@ -24,8 +24,8 @@ export default {
   .banner
     img.w-100(:src="`${baseOss}bg1.png`")
     .banner-info.w-100
-      .f316-font.welcome-en {{ TextMap.welcomeEn }}
-      .welcome-cn {{ TextMap.welcomeCn }}
+      .f316-font.welcome-en.font-max {{ TextMap.welcomeEn }}
+      .welcome-cn.font-l {{ TextMap.welcomeCn }}
       .primary-btn 了解更多 &gt;&gt;
   .home-container
     .experie-box.d-flex
@@ -33,7 +33,7 @@ export default {
         v-for="(item, idx) in experieList",
         :key="idx"
       )
-        .num {{ item.num }}
+        .num.font-second {{ item.num }}
         div
           div {{ item.en }}
           div {{ item.desc }}
@@ -47,13 +47,13 @@ export default {
           .name {{ item.name }}
           .desc {{ item.desc }}
       .right
-        .f316-font.title
+        .f316-font.font-204
           span {{ TextMap.canIDo.split('|')[0] }}
           span.text-yellow {{ TextMap.canIDo.split('|')[1] }}
         pre.skill-text {{ TextMap.skillInfo }}
         .primary-btn 查看作品 &gt;&gt;
     .chooseme-box
-      .f316-font.title
+      .f316-font.font-204
         span {{ TextMap.chooseme.split('|')[0] }}
         span.text-yellow {{ TextMap.chooseme.split('|')[1] }}
       p.desc {{ TextMap.choosemeDesc }}
@@ -65,119 +65,112 @@ export default {
 
 <style lang="scss">
 .home-box {
-  height: 2500px;
-  .f316-font.title {
-    font-size: 32px;
-  }
+  height: 3500px;
   .banner {
-    margin-top: 50px;
+    margin-top: 3.125rem;
     position: relative;
     .banner-info {
       position: absolute;
-      width: 800px;
+      width: 50rem;
       left: 50%;
       transform: translateX(-50%);
-      top: 10px;
+      top: 1.31rem;
       &::after {
         content: '';
         position: absolute;
-        top: 0px;
-        left: 484px;
-        width: 65px;
-        height: 65px;
+        top: 0;
+        left: 31.42rem;
+        width: 4.63rem;
+        height: 4.63rem;
         background-color: #FEBC5B;
         border-radius: 50%;
         z-index: -1;
       }
-      .welcome-en {
-        font-size: 52px;
-        letter-spacing: 2px;
-      }
       .welcome-cn {
-        font-size: 24px;
-        margin: 10px 0 25px;
+        margin: 1.58rem 0 2.04rem;
       }
     }
   }
 }
 
 .home-container {
-  width: 72%;
+  width: 58.3rem;
   margin: 0 auto;
 }
 .experie-box {
   justify-content: space-between;
-  margin-top: 50px;
   background-color: #fff;
-  box-shadow: 0px 0px 152px 0px rgba(54, 57, 140, 0.13);
-  border-radius: 6px;
-  height: 100px;
-  margin: 20px auto 70px;
-  padding: 30px 20px;
+  box-shadow: 0rem 0rem 6rem 0rem rgba(54, 57, 140, 0.13);
+  border-radius: 0.375rem;
+  height: 8.33rem;
+  margin: 1.54rem auto 5.52rem;
+  padding: 3.04rem 2rem;
   color: #8989A2;
   font-weight: 500;
   .experie-item {
-    padding: 0 10px;
+    padding: 0 0.5rem;
      .num {
       color: #1E0F52;
-      font-size: 40px;
       font-weight: 600;
-      margin-right: 10px;
+      margin-right: 1.21rem;
     }
   }
 }
 
 .skill-box {
   align-items: flex-start;
+  justify-content: space-between;
   .left {
-    width: calc(100% - 310px);
     justify-content: space-between;
     .skill-item {
-      width: calc(33% - 10px);
-      padding: 10px 30px 30px;
+      width: 11rem;
+      padding: 1.67rem 1.08rem 2.73rem;
       background-color: #fff;
-      box-shadow: 0px 0px 48px 3px rgba(200, 200, 200, 0.28);
-      border-radius: 10px;
+      box-shadow: 0rem 0rem 2rem 0rem rgba(200, 200, 200, 0.28);
+      border-radius: 1rem;
       text-align: center;
       transition: all 0.3s;
+      margin-right: 2.63rem;
       &:hover {
-        transform: translateY(-10px);
+        transform: translateY(-0.375rem);
       }
       &:nth-child(2n) {
-        transform: translateY(60px);
+        transform: translateY(4.05rem);
       }
       &:nth-child(2n):hover {
-        transform: translateY(50px);
+        transform: translateY(3.675rem);
       }
       img {
-        width: 70%;
+        width: 5rem;
       }
       .name {
-        font-size: 20px;
-        margin-bottom: 10px;
+        font-size: 1.18rem;
+        margin-bottom: 1.13rem;
       }
       .desc {
         color: #A8A9C5;
         text-align: left;
+        font-size: 0.79rem;
       }
     }
   }
 
   .right {
-    width: 310px;
-    padding: 60px 0 20px 40px;
+    width: 16rem;
+    padding-top: 4rem;
     .skill-text {
-      margin-bottom: 40px;
+      margin-bottom: 2.95rem;
     }
   }
 }
 
 .chooseme-box {
   text-align: center;
-  margin-top: 80px;
+  margin-top: 11.2rem;
   > .desc {
-    width: 80%;
-    margin: 20px auto 40px;
+    width: 50rem;
+    margin: 1.75rem auto 3.3rem;
+    font-size: 0.92rem;
   }
 }
 </style>
