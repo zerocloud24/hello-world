@@ -96,9 +96,10 @@ $pieSize: 4.25rem;
         box-shadow: 0rem 0rem 2rem 0rem rgba(200, 200, 200, 0.28);
         border-radius: 1rem;
         padding: 1.33rem 1.26rem 1rem;
-        margin-bottom: 0.75rem;
+        margin-bottom: 1rem;
         &:nth-child(2n) {
           margin-left: 2.17rem;
+          transform: translateY(50%);
         }
         .name {
           font-size: 0.83rem;
