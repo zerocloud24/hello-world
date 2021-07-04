@@ -3,6 +3,7 @@ import { EXPERIE_LIST, SKILL_LIST } from '@/constant/metadata'
 
 import SkillChart from '@/components/skillchart'
 import PreWorks from '@/components/preworks'
+import CallMe from '@/components/callme'
 
 export default {
   name: 'HomeBox',
@@ -14,7 +15,8 @@ export default {
   },
   components: {
     SkillChart,
-    PreWorks
+    PreWorks,
+    CallMe
   }
 }
 </script>
@@ -61,6 +63,21 @@ export default {
       SkillChart
 
   PreWorks
+  .self-slogan.container
+    .icon.right
+      img(:src="`${baseOss}icon4.png`")
+    .icon.left
+      img(:src="`${baseOss}icon5.png`")
+    .symbol &#8220;
+    p.cn.font-m
+      span(
+        v-for="(c, i) in TextMap.sloganCn.split('|')",
+        :key="c + i",
+        :class="{ 'text-yellow': !(i % 2) }",
+      ) {{ c }}
+    pre.en.font-m {{ TextMap.sloganEn }}
+    p.at.font-600 {{ TextMap.sloganAt }}
+  CallMe
 </template>
 
 <style lang="scss">
@@ -167,6 +184,39 @@ export default {
     width: 50rem;
     margin: 1.75rem auto 3.3rem;
     font-size: 0.92rem;
+  }
+}
+
+.self-slogan {
+  padding: 3.5rem 0 3rem;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  .symbol {
+    font-size: 3rem;
+    color: #EAEAEA;
+    line-height: 10px;
+  }
+  .en {
+    color: #D5D5D5;
+  }
+  .at {
+    font-size: 1.17rem;
+  }
+  > .icon {
+    position: absolute;
+    &.right {
+      width: 2.92rem;
+      height: 2.88rem;
+      right: 0;
+      top: 3rem;
+    }
+    &.left {
+      width: 3.38rem;
+      height: 5.04rem;
+      left: 0;
+      bottom: 3rem;
+    }
   }
 }
 </style>

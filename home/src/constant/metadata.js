@@ -137,3 +137,56 @@ export const TIME_AXIS_DATA = () => ([
     notLine: true
   }
 ])
+
+export const BASIC_INFO = () => ([
+  {
+    label: '姓名',
+    value: '周凌云'
+  },
+  {
+    label: '专业',
+    value: '应用心理学'
+  },
+  {
+    label: '生日',
+    value: '96.11.04'
+  },
+  {
+    label: '现居',
+    value: '湖北武汉'
+  },
+  {
+    label: '学历',
+    value: '本科'
+  },
+  {
+    label: '电话',
+    value: '15071437560'
+  },
+  {
+    label: '常用邮箱',
+    value: '973773273@qq.com',
+    width: 100
+  },
+  {
+    label: '毕业院校',
+    value: '湖北第二师范学院',
+    width: 100
+  },
+])
+
+export const WORK_EXPERIE = () => ([
+  {
+    time: '2018.06',
+    content: '从湖北第二师范学院应用|心理学专业|毕业|；'
+  },
+  {
+    time: '2020.04-2021',
+    content: '正式从事|UI设计|工作，同时学习插画；'
+  },
+  {
+    time: '2018.06-2020.04',
+    content: '从事|逻辑思维老师|教学工作；</br>(因少量设计工作，如：简单活动海报、放假海报等，|开始接触设计软件|)',
+    width: 100
+  }
+])

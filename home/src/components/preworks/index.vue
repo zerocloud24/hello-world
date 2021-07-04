@@ -72,7 +72,7 @@ export default {
   text-align: left;
   height: 34.25rem;
   background-size: cover;
-  padding: 4rem 0 2.5rem 11.2rem;
+  padding: 4rem 0 2.5rem calc((100% - 58.3rem) / 2);
   width: 100%;
   overflow: hidden;
   > .left {

@@ -8,5 +8,14 @@ export default {
   recentWork: 'My recent | works',
   recentWorkDesc: '近期作品包括公司项目和个人练习，\n公司项目以移动端为主;\n个人练习均为原创，有平时打卡也有比赛作品。',
   personalSkill: 'PERSONA | SKILLS',
-  personalSkillDesc: '拥有计算机二级、英语六级、心理咨询师三级、普通话二甲证书'
+  personalSkillDesc: '拥有计算机二级、英语六级、心理咨询师三级、普通话二甲证书',
+  basicInfo: 'BASIC | INFORMATION',
+  workExperience: 'WORK | EXPERIENCE',
+  workFlootTextCn: '凡是过往皆为序章，所有未来皆为可盼!',
+  workFlootTextEn: 'All the past is the prologue, all the future is the hope!',
+  sloganCn: '设计|是我第一个|无关他人|的决定，我会保持初心，走好这条路！',
+  sloganEn: 'Design is my first decision that has nothing to do with others, \nI will keep my original intention and take this path well!',
+  sloganAt: '@一只努力进步的设计崽',
+  myColleague: 'Be my | colleague?',
+  callme: '快和我成为同事吧！简单粗暴联系我！'
 }
