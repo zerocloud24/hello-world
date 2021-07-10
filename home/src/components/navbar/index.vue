@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template lang="pug">
-.nav-bar.d-flex.align-items-center
+.nav-bar.d-flex.align-items-center(:class="{ 'is-works': value === 'works' }")
   .logo-box.w-50.h-100.font-l
     .name.f316-font.h-100 D.va
     .bg-prup
@@ -25,6 +25,17 @@ export default {
 <style lang="scss">
 .nav-bar {
   height: 3.5rem;
+  &.is-works {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: -2;
+      width: 100%;
+      height: 100%;
+      background-color: #eef2f7;
+    }
+  }
 }
 
 .logo-box {

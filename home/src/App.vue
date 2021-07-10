@@ -9,6 +9,7 @@ import NavBar from '@/components/navbar'
 
 import Home from '@/pages/home'
 import Profile from '@/pages/profile'
+import Works from '@/pages/works'
 
 export default {
   name: 'App',
@@ -39,7 +40,7 @@ export default {
         {
           value: 'works',
           label: '作品',
-          component: ''
+          component: Works
         },
         {
           value: 'callme',

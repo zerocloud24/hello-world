@@ -82,7 +82,6 @@ export default {
 
 <style lang="scss">
 .home-box {
-  height: 3500px;
   .banner {
     margin-top: 3.125rem;
     position: relative;
