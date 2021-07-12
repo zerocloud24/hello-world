@@ -84,7 +84,7 @@ html {
 
 @media only screen and (min-width: 1920px){
   html {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 
@@ -95,10 +95,14 @@ body {
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: PingFangSC-Regular, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #1E0F52;
+}
+
+#app pre {
+  font-family: PingFangSC-Regular, sans-serif;
 }
 
 @font-face {

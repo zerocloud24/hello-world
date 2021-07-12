@@ -1,5 +1,5 @@
 <script>
-import { WORK_LIST } from '@/constant/metadata'
+import { PRE_WORK_LIST } from '@/constant/metadata'
 
 const NUM = 16.46 // 每次移动的宽度  -》 每块的宽度 加上 右边距的宽度： 14.58 + 1.88
 
@@ -7,7 +7,7 @@ export default {
   name: 'PreWorks',
   data () {
     return {
-      workList: WORK_LIST(),
+      preWorkList: PRE_WORK_LIST(),
       offset: 0,
       maxOffset: NUM
     }
@@ -48,10 +48,11 @@ export default {
   .right#pre-works-container
     .pre-work-list.d-flex#pre-works-content(:style="{ left: `${offset}rem` }")
       .work-item(
-        v-for="(item, idx) in workList",
+        v-for="(item, idx) in preWorkList",
         :key="idx"
       )
         .img-box
+          img.w-100(:src="`${baseOss}${item.imgUrl}`")
         .info
           .name {{ item.name }}
           .desc {{ item.desc }}
@@ -105,7 +106,7 @@ export default {
           border-radius: 0.375rem;
         }
         .info {
-          padding: 0.75rem 1.25rem;
+          padding: 0.85rem 1.25rem 0rem;
         }
         .name {
           color: #333333;
@@ -113,7 +114,7 @@ export default {
           font-size: 1.17rem;
         }
         .desc {
-          margin: 0.75rem 0 1rem;
+          margin: 0.5rem 0 0.75rem;
         }
         .time {
           text-align: right;

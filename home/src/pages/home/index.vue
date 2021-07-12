@@ -186,11 +186,11 @@ export default {
   }
 }
 
-.self-slogan {
+.self-slogan.container {
   padding: 3.5rem 0 3rem;
   text-align: center;
   position: relative;
-  width: 100%;
+  margin: 2rem auto;
   .symbol {
     font-size: 3rem;
     color: #EAEAEA;

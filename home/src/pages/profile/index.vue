@@ -35,7 +35,7 @@ export default {
         )
           span.label {{ item.label }}:
           span.value.font-600 {{ item.value }}
-  .work-experience
+  .work-experience(:style="{ backgroundImage: `url(${baseOss}bg4.png)` }")
     .container
       .font-192.f316-font
         span {{ TextMap.workExperience.split('|')[0] }}
@@ -122,8 +122,8 @@ export default {
     }
   }
   .work-experience {
-    background-color: #4F52B1;
     height: 27.2rem;
+    background-size: cover;
     padding: 3rem 0 4rem 0;
     color: #fff;
     margin-bottom: 6.17rem;

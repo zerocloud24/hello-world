@@ -78,30 +78,30 @@ export const SKILL_PIE_DATA = () => ([
   }
 ])
 
-export const WORK_LIST = () => ([
+export const PRE_WORK_LIST = () => ([
   {
     name: '扁平人物情绪版',
     desc: '一套扁平的人物插画情绪版设计，包括工作、金融…',
     time: '2021.06.03',
-    imgUrl: ''
+    imgUrl: 'pre-work1.png'
   },
   {
     name: '云链钱包APP',
     desc: '云链钱包是一个去中心化数字资产钱包…',
     time: '2021.05.26',
-    imgUrl: ''
+    imgUrl: 'pre-work2.png'
   },
   {
     name: 'Bingo交易所',
     desc: 'Bingo交易所是一个数字货 币交易平台…',
     time: '正在开发',
-    imgUrl: ''
+    imgUrl: 'pre-work3.png'
   },
   {
-    name: 'Bingo交易所',
-    desc: 'Bingo交易所是一个数字货 币交易平台…',
+    name: '运营插画总结',
+    desc: 'Y园糖21天打卡活动时产出，主题包括厨艺直播秀……',
     time: '正在开发',
-    imgUrl: ''
+    imgUrl: 'pre-work4.png'
   }
 ])
 
@@ -188,5 +188,28 @@ export const WORK_EXPERIE = () => ([
     time: '2018.06-2020.04',
     content: '从事|逻辑思维老师|教学工作；</br>(因少量设计工作，如：简单活动海报、放假海报等，|开始接触设计软件|)',
     width: 100
+  }
+])
+
+export const WORK_TABS = () => ([
+  {
+    value: 'all',
+    label: '全部',
+    iconUrl: 'icon9'
+  },
+  {
+    value: 'org',
+    label: '公司',
+    iconUrl: 'icon6'
+  },
+  {
+    value: 'private',
+    label: '个人',
+    iconUrl: 'icon7'
+  },
+  {
+    value: 'compet',
+    label: '比赛',
+    iconUrl: 'icon8'
   }
 ])
