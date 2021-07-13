@@ -94,15 +94,21 @@ body {
   overflow-x: auto;
 }
 
+@font-face {
+  font-family: pfFont;
+  src: url('~@/assets/fonts/PINGFANG-REGULAR_1.ttf') format('truetype');
+}
+
 #app {
-  font-family: PingFangSC-Regular, sans-serif;
+  font-family: pfFont, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #1E0F52;
 }
 
 #app pre {
-  font-family: PingFangSC-Regular, sans-serif;
+  /* font-family: PingFangSC-Regular, sans-serif; */
+  font-family: pfFont, sans-serif;
 }
 
 @font-face {
@@ -122,7 +128,7 @@ body {
 }
 
 .f316-font {
-  font-family: mFont;
+  font-family: mFont !important;
 }
 
 .d-flex {
