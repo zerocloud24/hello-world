@@ -200,16 +200,73 @@ export const WORK_TABS = () => ([
   {
     value: 'org',
     label: '公司',
-    iconUrl: 'icon6'
+    iconUrl: 'icon6',
+    tag: '公司项目',
+    tagColor: '#6D93FF'
   },
   {
     value: 'private',
     label: '个人',
-    iconUrl: 'icon7'
+    iconUrl: 'icon7',
+    tag: '个人项目',
+    tagColor: '#706DFF'
   },
   {
     value: 'compet',
     label: '比赛',
-    iconUrl: 'icon8'
+    iconUrl: 'icon8',
+    tag: '比赛作品',
+    tagColor: '#FF966D'
+  }
+])
+
+export const WORK_LIST = () => ([
+  {
+    title: '云链钱包APP',
+    desc: '《云链钱包app》是 武汉市云链智慧区块链有限公司 的自研项目，其本质是一个多公链去中心化数字资产钱包。该项目已于今年5月26号正式上线初版。目前还在设计新增【资讯】功能。',
+    date: '2021年06月',
+    preImg: 'work1.png',
+    bigImg: 'bigImg1.png',
+    type: 'org'
+  },
+  {
+    title: 'Bingo交易所',
+    desc: '《Bingo交易所》是 武汉市云链智慧区块链有限公司 的外包项目，其本质是一个数字货币交易平台。该项目目前还在开发中，暂不确定上线时间。',
+    date: '2021年06月',
+    preImg: 'work2.png',
+    bigImg: 'bigImg2.png',
+    type: 'org'
+  },
+  {
+    title: '扁平人物情绪版',
+    desc: '一套扁平的人物插画情绪版设计，一共有五个场景包括工作、金融、母婴、购物和爱宠等。本套情绪版是参与《Y园糖21天打卡》活动时产出。',
+    date: '2021年05月',
+    preImg: 'work3.png',
+    bigImg: 'bigImg3.png',
+    type: 'private'
+  },
+  {
+    title: '运营插画总结',
+    desc: '一套运营插画总结，一共有六个主题分别是电脑促销节、卫生间装修、春季出游计划、美妆女神节等。本套运营插画也是在参与《Y园糖21天打卡》活动时产出。',
+    date: '2021年05月',
+    preImg: 'work4.png',
+    bigImg: 'bigImg4.png',
+    type: 'private'
+  },
+  {
+    title: '我想要的2021',
+    desc: '阿里妈妈Iconfont平台“我想要的2021”主题插画大赛，要求作品使用矢量软件完成，不能有阴影等效果。最终获得 入围奖。',
+    date: '2021年03月',
+    preImg: 'work5.png',
+    bigImg: 'bigImg5.png',
+    type: 'compet'
+  },
+  {
+    title: '星际探索小游戏',
+    desc: '星际探索小游戏是IPFSWAP交易所里面的游戏版块，因其余版块由其他设计师完成，所以此处只展示单一版块。该游戏重在营造氛围，没有游戏互动，只是交易的一种玩法包装。',
+    date: '2020年12月',
+    preImg: 'work6.png',
+    bigImg: 'bigImg5.png',
+    type: 'org'
   }
 ])

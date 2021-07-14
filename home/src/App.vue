@@ -100,7 +100,8 @@ body {
 }
 
 #app {
-  font-family: pfFont, sans-serif;
+  font-family: PingFangSC-Regular, sans-serif;
+  /* font-family: pfFont, sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #1E0F52;
