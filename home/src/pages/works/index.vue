@@ -1,6 +1,6 @@
 <script>
 import PreWorks from '@/components/preworks'
-import CallMe from '@/components/callme'
+import CallMe from '@/components/callme/footer'
 
 import { WORK_TABS, WORK_LIST } from '@/constant/metadata'
 

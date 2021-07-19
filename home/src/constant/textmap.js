@@ -17,5 +17,7 @@ export default {
   sloganEn: 'Design is my first decision that has nothing to do with others, \nI will keep my original intention and take this path well!',
   sloganAt: '@一只努力进步的设计崽',
   myColleague: 'Be my | colleague?',
-  callme: '快和我成为同事吧！简单粗暴联系我！'
+  callme: '快和我成为同事吧！简单粗暴联系我！',
+  phone: '15071437560',
+  email: '973773273@qq.com'
 }

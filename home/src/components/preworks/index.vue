@@ -44,7 +44,7 @@ export default {
       span {{ TextMap.recentWork.split('|')[0] }}
       span.text-yellow {{ TextMap.recentWork.split('|')[1] }}
     pre.skill-text {{ TextMap.recentWorkDesc }}
-    .primary-btn 查看全部 &gt;&gt;
+    .primary-btn(@click="$emit('changeTab', 'works')") 查看全部 &gt;&gt;
   .right#pre-works-container
     .pre-work-list.d-flex#pre-works-content(:style="{ left: `${offset}rem` }")
       .work-item(

@@ -4,6 +4,15 @@ export default {
   props: {
     menus: Array,
     value: String
+  },
+  methods: {
+    handleClick (item) {
+      if (item.value === 'callme') {
+        this.$emit('showDialog')
+      } else {
+        this.$emit('input', item.value)
+      }
+    }
   }
 }
 </script>
@@ -18,7 +27,7 @@ export default {
       v-for="item in menus",
       :key="item.value",
       :class="{ 'is-active': value === item.value, 'is-bg': item.value === 'callme' }",
-      @click="$emit('input', item.value)"
+      @click="handleClick(item)"
     ) {{ item.label }}
 </template>
 

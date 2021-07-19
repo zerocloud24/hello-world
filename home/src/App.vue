@@ -1,7 +1,18 @@
 <template lang="pug">
   #app
-    NavBar(:menus="menus", v-model="currentTab")
-    components(:is="current")
+    NavBar(
+      v-model="currentTab",
+      :menus="menus",
+      @showDialog="showDialog = true"
+    )
+    components(
+      :is="current",
+      @changeTab="val => currentTab = val"
+    )
+    .dialog-wrapper(v-if="showDialog")
+      .dialog-bg(@click="showDialog = false")
+      .dialog-box
+        CallMe(@closeDialog="showDialog = false")
 </template>
 
 <script>
@@ -11,15 +22,19 @@ import Home from '@/pages/home'
 import Profile from '@/pages/profile'
 import Works from '@/pages/works'
 
+import CallMe from '@/components/callme/dialog'
+
 export default {
   name: 'App',
   data () {
     return {
-      currentTab: 'home'
+      currentTab: 'home',
+      showDialog: false
     }
   },
   components: {
-    NavBar
+    NavBar,
+    CallMe
   },
   computed: {
     current () {
@@ -49,11 +64,16 @@ export default {
         }
       ]
     }
+  },
+  watch: {
+    currentTab () {
+      window.scrollTo(0,0)
+    }
   }
 }
 </script>
 
-<style>
+<style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
 * {
@@ -94,22 +114,15 @@ body {
   overflow-x: auto;
 }
 
-@font-face {
-  font-family: pfFont;
-  src: url('~@/assets/fonts/PINGFANG-REGULAR_1.ttf') format('truetype');
-}
-
 #app {
   font-family: PingFangSC-Regular, sans-serif;
-  /* font-family: pfFont, sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #1E0F52;
 }
 
 #app pre {
-  /* font-family: PingFangSC-Regular, sans-serif; */
-  font-family: pfFont, sans-serif;
+  font-family: PingFangSC-Regular, sans-serif;
 }
 
 @font-face {
@@ -123,6 +136,31 @@ body {
        url("~@/assets/fonts/316-CAI978.svg#316-CAI978") format("svg");
 }
 
+.dialog-wrapper {
+  .dialog-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .dialog-box {
+    position: fixed;
+    z-index: 110;
+    width: 22.3rem;
+    height: 26rem;
+    background-color: #fff;
+    border-radius: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+}
 .container {
   width: 58.3rem;
   margin: 0 auto;
@@ -157,7 +195,7 @@ body {
   cursor: pointer;
   background-color: #5347CA;
   padding: 0.375rem 1rem;
-  box-shadow: 0 0.375rem 1.25rem 0 rgb(123 111 247 / 46%);
+  box-shadow: 0 0.375rem 1.25rem 0 rgba(123, 111, 247, 0.46);
   border-radius: 0.375rem;
   color: #fff;
 }

@@ -3,7 +3,7 @@ import { EXPERIE_LIST, SKILL_LIST } from '@/constant/metadata'
 
 import SkillChart from '@/components/skillchart'
 import PreWorks from '@/components/preworks'
-import CallMe from '@/components/callme'
+import CallMe from '@/components/callme/footer'
 
 export default {
   name: 'HomeBox',
@@ -24,11 +24,14 @@ export default {
 <template lang="pug">
 .home-box
   .banner
-    img.w-100(:src="`${baseOss}bg1.png`")
+    .banner-bg-content.container
+      img.w-100(:src="`${baseOss}/bg1-1.png`")
+    .banner-bg-footer.w-100
+      img.w-100(:src="`${baseOss}/bg1-2.png`")
     .banner-info.w-100
       .f316-font.welcome-en.font-max {{ TextMap.welcomeEn }}
       .welcome-cn.font-l {{ TextMap.welcomeCn }}
-      .primary-btn 了解更多 &gt;&gt;
+      .primary-btn(@click="$emit('changeTab', 'profile')") 了解更多 &gt;&gt;
   .container
     .experie-box.d-flex
       .experie-item.d-flex.align-items-center(
@@ -53,7 +56,7 @@ export default {
           span {{ TextMap.canIDo.split('|')[0] }}
           span.text-yellow {{ TextMap.canIDo.split('|')[1] }}
         pre.skill-text {{ TextMap.skillInfo }}
-        .primary-btn 查看作品 &gt;&gt;
+        .primary-btn(@click="$emit('changeTab', 'works')") 查看作品 &gt;&gt;
     .chooseme-box
       .f316-font.font-204
         span {{ TextMap.chooseme.split('|')[0] }}
@@ -62,7 +65,7 @@ export default {
 
       SkillChart
 
-  PreWorks
+  PreWorks(@changeTab="val => $emit('changeTab', val)")
   .self-slogan.container
     .icon.right
       img(:src="`${baseOss}icon4.png`")
@@ -76,7 +79,8 @@ export default {
         :class="{ 'text-yellow': !(i % 2) }",
       ) {{ c }}
     pre.en.font-m {{ TextMap.sloganEn }}
-    p.at.font-600 {{ TextMap.sloganAt }}
+    .at-text
+      img.w-100(:src="`${baseOss}at_text.png`")
   CallMe
 </template>
 
@@ -85,12 +89,21 @@ export default {
   .banner {
     margin-top: 3.125rem;
     position: relative;
+    padding-top: 5rem;
+    .banner-bg-footer {
+      position: absolute;
+      z-index: -1;
+      bottom: 0;
+      height: 10rem;
+      overflow: hidden;
+    }
     .banner-info {
       position: absolute;
+      z-index: 11;
       width: 50rem;
       left: 50%;
       transform: translateX(-50%);
-      top: 1.31rem;
+      top: 1.6rem;
       &::after {
         content: '';
         position: absolute;
@@ -199,9 +212,6 @@ export default {
   .en {
     color: #D5D5D5;
   }
-  .at {
-    font-size: 1.17rem;
-  }
   > .icon {
     position: absolute;
     &.right {
@@ -216,6 +226,11 @@ export default {
       left: 0;
       bottom: 3rem;
     }
+  }
+
+  .at-text {
+    width: 12.6rem;
+    margin: 3rem auto 0;
   }
 }
 </style>
