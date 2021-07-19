@@ -28,6 +28,9 @@ export default {
       const cur = offset + n
 
       this.offset = cur > 0 ? 0 : cur < -maxOffset ? -maxOffset : cur
+    },
+    toWork (item) {
+      console.log(item)
     }
   },
   mounted () {
@@ -49,7 +52,8 @@ export default {
     .pre-work-list.d-flex#pre-works-content(:style="{ left: `${offset}rem` }")
       .work-item(
         v-for="(item, idx) in preWorkList",
-        :key="idx"
+        :key="idx",
+        @click="toWork(item)"
       )
         .img-box
           img.w-100(:src="`${baseOss}${item.imgUrl}`")
@@ -100,6 +104,8 @@ export default {
         min-width: 14.58rem;
         max-width: 14.58rem;
         margin-right: 1.88rem;
+        cursor: pointer;
+        transition: all 0.2s;
         .img-box {
           height: 14.58rem;
           background-color: #7A7A7A;
@@ -118,6 +124,9 @@ export default {
         }
         .time {
           text-align: right;
+        }
+        &:hover {
+          box-shadow: 0rem 0rem 2rem 0.3rem rgba(200, 200, 200, 0.38);
         }
       }
     }
