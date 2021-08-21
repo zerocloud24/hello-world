@@ -83,25 +83,29 @@ export const PRE_WORK_LIST = () => ([
     name: '扁平人物情绪版',
     desc: '一套扁平的人物插画情绪版设计，包括工作、金融…',
     time: '2021.06.03',
-    imgUrl: 'pre-work1.png'
+    imgUrl: 'pre-work1.png',
+    bigImg: 'bigImg3.png'
   },
   {
     name: '云链钱包APP',
     desc: '云链钱包是一个去中心化数字资产钱包…',
     time: '2021.05.26',
-    imgUrl: 'pre-work2.png'
+    imgUrl: 'pre-work2.png',
+    bigImg: 'bigImg1.png'
   },
   {
     name: 'Bingo交易所',
     desc: 'Bingo交易所是一个数字货 币交易平台…',
     time: '正在开发',
-    imgUrl: 'pre-work3.png'
+    imgUrl: 'pre-work3.png',
+    bigImg: 'bigImg2.png'
   },
   {
     name: '运营插画总结',
     desc: 'Y园糖21天打卡活动时产出，主题包括厨艺直播秀……',
     time: '正在开发',
-    imgUrl: 'pre-work4.png'
+    imgUrl: 'pre-work4.png',
+    bigImg: 'bigImg4.png'
   }
 ])
 

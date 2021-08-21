@@ -47,7 +47,7 @@ export default {
           :style="{ width: `${ item.width || 50 }%` }"
         )
           .time.font-600 {{ item.time }}
-          .content.font-m
+          .content
             span(
               v-for="(c, i) in item.content.split('|')",
               :key="c + i",
@@ -134,6 +134,10 @@ export default {
       justify-content: space-between;
       flex-wrap: wrap;
       .experience-item {
+        > .content {
+          font-size: 1.1rem;
+          font-weight: 300;
+        }
         &:not(:last-child) {
           margin-bottom: 4.5rem;
         }

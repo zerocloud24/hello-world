@@ -7,7 +7,8 @@
     )
     components(
       :is="current",
-      @changeTab="val => currentTab = val"
+      :defaultWork="defaultWork",
+      @changeTab="changeTab"
     )
     .dialog-wrapper(v-if="showDialog")
       .dialog-bg(@click="showDialog = false")
@@ -29,7 +30,8 @@ export default {
   data () {
     return {
       currentTab: 'home',
-      showDialog: false
+      showDialog: false,
+      defaultWork: ''
     }
   },
   components: {
@@ -63,6 +65,12 @@ export default {
           component: ''
         }
       ]
+    }
+  },
+  methods: {
+    changeTab ({ val, defaultWork }) {
+      this.currentTab = val
+      this.defaultWork = defaultWork
     }
   },
   watch: {
@@ -104,7 +112,7 @@ html {
 
 @media only screen and (min-width: 1920px){
   html {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 
@@ -145,7 +153,7 @@ body {
     left: 0;
     z-index: 99;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   .dialog-box {

@@ -36,14 +36,14 @@ export default {
           .left
             .left-deg
           .right
-            .right-deg(:style="{ transform: `rotate(${(100 - item.percent) * 3.6 - 180}deg)` }")
+            .right-deg(:style="{ transform: `rotate(${(100 - item.percent) * 3.6 - 180}deg) translateY(1px)` }")
           .num {{ item.percent }}%
         .name.text-center {{ item.name }}
         p.desc.font-xs {{ item.desc }}
 </template>
 
 <style lang="scss">
-$pieSize: 4.25rem;
+$pieSize: 80px;
 
 .skill-chart {
   text-align: left;
@@ -128,8 +128,10 @@ $pieSize: 4.25rem;
             left: 50%;
             z-index: 1;
             transform: translate(-50%, -50%);
-            width: calc(100% - 1rem);
-            height: calc(100% - 1rem);
+            // width: calc(100% - 1rem);
+            // height: calc(100% - 1rem);
+            width: 80%;
+            height: 80%;
             background: white;
             border-radius: 50%;
           }
@@ -148,7 +150,7 @@ $pieSize: 4.25rem;
             border-radius: $pieSize 0 0 $pieSize;
             .left-deg {
               transform-origin: right center;
-              transform: rotate(-180deg);
+              transform: rotate(-180deg) translateX(-1px);
             }
           }
           .right {

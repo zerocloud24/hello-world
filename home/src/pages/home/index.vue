@@ -31,7 +31,7 @@ export default {
     .banner-info.w-100
       .f316-font.welcome-en.font-max {{ TextMap.welcomeEn }}
       .welcome-cn.font-l {{ TextMap.welcomeCn }}
-      .primary-btn(@click="$emit('changeTab', 'profile')") 了解更多 &gt;&gt;
+      .primary-btn(@click="$emit('changeTab', { val: 'profile' })") 了解更多 &gt;&gt;
   .container
     .experie-box.d-flex
       .experie-item.d-flex.align-items-center(
@@ -56,7 +56,7 @@ export default {
           span {{ TextMap.canIDo.split('|')[0] }}
           span.text-yellow {{ TextMap.canIDo.split('|')[1] }}
         pre.skill-text {{ TextMap.skillInfo }}
-        .primary-btn(@click="$emit('changeTab', 'works')") 查看作品 &gt;&gt;
+        .primary-btn(@click="$emit('changeTab', { val: 'works' })") 查看作品 &gt;&gt;
     .chooseme-box
       .f316-font.font-204
         span {{ TextMap.chooseme.split('|')[0] }}
@@ -65,7 +65,7 @@ export default {
 
       SkillChart
 
-  PreWorks(@changeTab="val => $emit('changeTab', val)")
+  PreWorks(@changeTab="data => $emit('changeTab', data)")
   .self-slogan.container
     .icon.right
       img(:src="`${baseOss}icon4.png`")
@@ -90,6 +90,9 @@ export default {
     margin-top: 3.125rem;
     position: relative;
     padding-top: 5rem;
+    .welcome-en {
+      transform: translateX(-5px);
+    }
     .banner-bg-footer {
       position: absolute;
       z-index: -1;

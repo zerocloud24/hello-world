@@ -6,7 +6,9 @@ import { WORK_TABS, WORK_LIST } from '@/constant/metadata'
 
 export default {
   name: 'Works',
-  props: {},
+  props: {
+    defaultWork: String
+  },
   data () {
     return {
       activeTab: 'all',
@@ -30,6 +32,31 @@ export default {
     clickTab (val) {
       this.activeTab = val
       this.selectWork = ''
+    },
+    setSelectWork () {
+      if (this.defaultWork) {
+        this.selectWork = this.defaultWork
+
+        const dom = document.querySelector('#work-container')
+        let hieght = dom.offsetTop
+        let scroll = 0
+        const timer = setInterval (() => {
+          document.scrollingElement.scrollTop = scroll
+          scroll += 20
+
+          if (scroll > hieght - 20) {
+            clearInterval(timer)
+          }
+        }, 15)
+      }
+    }
+  },
+  mounted () {
+    this.setSelectWork()
+  },
+  watch: {
+    defaultWork () {
+      this.setSelectWork()
     }
   },
   components: {
@@ -41,8 +68,8 @@ export default {
 
 <template lang="pug">
 .works-box
-  PreWorks
-  .container
+  PreWorks(@changeTab="data => $emit('changeTab', data)")
+  .container#work-container
     .tabs-box.d-flex
       .tabs-item.d-flex(
         v-for="(item, idx) in tabs",
@@ -57,7 +84,7 @@ export default {
     .big-img(v-show="selectWork")
       img.w-100(:src="baseOss + selectWork")
     .work-box(v-show="!selectWork")
-      .work-item.d-flex(
+      .work-item.d-flex.animate__animated.animate__backInLeft(
         v-for="(item, idx) in list",
         :key="idx"
       )
@@ -144,7 +171,8 @@ export default {
 
   .big-img {
     img {
-      transform: translateY(0.375rem);
+      // transform: translateY(0.375rem);
+      margin-bottom: 0.75rem;
     }
   }
 }
