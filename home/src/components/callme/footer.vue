@@ -25,9 +25,14 @@ export default {
         span.font-600 {{ TextMap.phone }}
         span.text-yellow.font-l （微信同号）
       span.font-600 {{ TextMap.email }}
+    .copyright-info
+      span Copyright 2021 版权所有 ©D.va
+      a(href="http://beian.miit.gov.cn/", target="_blank") 鄂ICP备2021015303号
 </template>
 
 <style lang="scss">
+$copyrightColor: #9799d8;
+
 .call-me {
   color: #fff;
   text-align: center;
@@ -46,6 +51,17 @@ export default {
   .callme {
     color: #6063BB;
     margin-bottom: 3rem;
+  }
+  .copyright-info {
+    font-size: 14px;
+    color: $copyrightColor;
+    margin-top: 1.5rem;
+    a {
+      color: $copyrightColor;
+    }
+    span {
+      margin-right: 0.5rem;
+    }
   }
   .font-600 {
     font-size: 2.17rem;
