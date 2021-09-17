@@ -30,7 +30,6 @@ export default {
       this.offset = cur > 0 ? 0 : cur < -maxOffset ? -maxOffset : cur
     },
     toWork (item) {
-      console.log(item)
       this.$emit('changeTab', { val: 'works', defaultWork: item.bigImg })
     }
   },

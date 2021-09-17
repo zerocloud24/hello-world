@@ -289,7 +289,7 @@ export const WORK_LIST = () => ([
     desc: '星际探索小游戏是IPFSWAP交易所里面的游戏版块，因其余版块由其他设计师完成，所以此处只展示单一版块。该游戏重在营造氛围，没有游戏互动，只是交易的一种玩法包装。',
     date: '2020年12月',
     preImg: 'work6.png',
-    bigImg: 'bigImg5.png',
+    bigImg: 'bigImg6.png',
     type: 'org'
   }
 ])

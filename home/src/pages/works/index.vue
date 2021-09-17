@@ -33,30 +33,48 @@ export default {
       this.activeTab = val
       this.selectWork = ''
     },
-    setSelectWork () {
-      if (this.defaultWork) {
-        this.selectWork = this.defaultWork
+    setDefaultScroll () {
+      const dom = document.querySelector('#work-container')
+      let hieght = dom.offsetTop
 
-        const dom = document.querySelector('#work-container')
-        let hieght = dom.offsetTop
-        let scroll = 0
-        const timer = setInterval (() => {
-          document.scrollingElement.scrollTop = scroll
-          scroll += 20
+      // 当页面滚动高度低于tab box时，向下滚动，否则向上滚动
+      const currentScroll = document.scrollingElement.scrollTop
+      currentScroll < hieght ? this.downScroll(currentScroll, hieght) : this.upScroll(currentScroll, hieght)
+    },
+    downScroll (scroll, hieght) {
+      const timer = setInterval (() => {
+        document.scrollingElement.scrollTop = scroll
+        scroll += 48
 
-          if (scroll > hieght - 20) {
-            clearInterval(timer)
-          }
-        }, 15)
-      }
+        if (scroll > hieght - 16) {
+          clearInterval(timer)
+        }
+      }, 8)
+    },
+    upScroll (scroll, hieght) {
+      const timer = setInterval (() => {
+        document.scrollingElement.scrollTop = scroll
+        scroll -= 48
+        if (scroll < hieght - 16) {
+          clearInterval(timer)
+        }
+      }, 8)
     }
   },
   mounted () {
-    this.setSelectWork()
+    if (this.defaultWork) {
+      this.selectWork = this.defaultWork
+    }
   },
   watch: {
-    defaultWork () {
-      this.setSelectWork()
+    defaultWork (val) {
+      this.selectWork = val
+    },
+    selectWork () {
+      this.setDefaultScroll()
+    },
+    activeTab () {
+      this.setDefaultScroll()
     }
   },
   components: {
@@ -69,41 +87,57 @@ export default {
 <template lang="pug">
 .works-box
   PreWorks(@changeTab="data => $emit('changeTab', data)")
-  .container#work-container
-    .tabs-box.d-flex
-      .tabs-item.d-flex(
-        v-for="(item, idx) in tabs",
-        :key="idx",
-        :class="{ 'is-active': activeTab === item.value }",
-        @click="clickTab(item.value)"
-      )
-        img(
-          :src="`${baseOss}${activeTab === item.value ? item.iconUrl + '-active' : item.iconUrl}.png`"
+  #work-container
+    .tabs-box
+      .container.d-flex
+        .tabs-item.d-flex(
+          v-for="(item, idx) in tabs",
+          :key="idx",
+          :class="{ 'is-active': activeTab === item.value }",
+          @click="clickTab(item.value)"
         )
-        .label(:class="") {{ item.label }}
-    .big-img(v-show="selectWork")
-      img.w-100(:src="baseOss + selectWork")
-    .work-box(v-show="!selectWork")
-      .work-item.d-flex.animate__animated.animate__backInLeft(
+          img(
+            :src="`${baseOss}${activeTab === item.value ? item.iconUrl + '-active' : item.iconUrl}.png`"
+          )
+          .label(:class="") {{ item.label }}
+    .container
+      .big-img(
         v-for="(item, idx) in list",
         :key="idx"
       )
-        .left-img(@click="selectWork = item.bigImg")
-          img.w-100(:src="`${baseOss}${item.preImg}`")
-        .right-content
-          div
-            .title.d-flex.align-items-center
-              span {{ item.title }}
-              span.tag(:style="{ color: item.color }") {{ item.tagName }}
-            .desc.font-m {{ item.desc }}
-          .date.font-l {{ item.date }}
+        img.w-100(
+          v-show="selectWork === item.bigImg",
+          :src="baseOss + item.bigImg"
+        )
+    .work-box(v-show="!selectWork")
+      .work-item(
+        v-for="(item, idx) in list",
+        :key="idx"
+      )
+        .container.d-flex
+          //- .animate__animated.animate__backInLeft
+          .left-img(@click="selectWork = item.bigImg")
+            img.w-100(:src="`${baseOss}${item.preImg}`")
+          .right-content
+            div
+              .title.d-flex.align-items-center
+                span.name(@click="selectWork = item.bigImg") {{ item.title }}
+                span.tag(:style="{ color: item.color }") {{ item.tagName }}
+              .desc.font-m {{ item.desc }}
+            .date.font-l {{ item.date }}
   CallMe(:isSimple="!!selectWork")
 </template>
 
 <style lang="scss">
 .works-box {
   .tabs-box {
-    margin: 4rem 0 5rem 0;
+    margin: 2.5rem 0 2rem 0;
+    padding: 1.5rem 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 99;
   }
   .tabs-item {
     padding: 0.75rem 1rem;
@@ -132,9 +166,15 @@ export default {
   .work-box {
     margin-bottom: 4.4rem;
     .work-item {
-      padding-bottom: 2.92rem;
-      border-bottom: 1px solid #F4F4F4;
-      margin-bottom: 3.92rem;
+      padding-top: 2rem;
+      > .container {
+        margin-top: 2rem;
+        padding-bottom: 3.92rem;
+        border-bottom: 1px solid #F4F4F4;
+      }
+      &:hover {
+       background-color: #F0F0F0;
+      }
       .left-img {
         width: 21rem;
         min-width: 21rem;
@@ -150,6 +190,12 @@ export default {
           font-size: 1.9rem;
           color: #0A0606;
           margin-bottom: 1.8rem;
+          > .name {
+            cursor: pointer;
+            &:hover {
+              color: #FEBC5B;
+            }
+          }
           .tag {
             font-size: 1rem;
             border: 1px solid currentColor;
