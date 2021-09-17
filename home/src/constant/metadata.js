@@ -94,6 +94,13 @@ export const PRE_WORK_LIST = () => ([
     bigImg: 'bigImg1.png'
   },
   {
+    name: '潮玩角色设计',
+    desc: '以《apex》的英雄生命线 作为参考，进行全新塑造…',
+    time: '2021.09',
+    imgUrl: 'pre-work5.png',
+    bigImg: 'bigImg7.png'
+  },
+  {
     name: 'Bingo交易所',
     desc: 'Bingo交易所是一个数字货 币交易平台…',
     time: '正在开发',
@@ -112,7 +119,11 @@ export const PRE_WORK_LIST = () => ([
 export const TIME_AXIS_DATA = () => ([
   {
     name: 'NOW',
-    desc: '在职 寻找新的工作机会'
+    desc: '离职 寻找新的工作机会'
+  },
+  {
+    name: '2021.08',
+    desc: '从 武汉市云链智慧区块链有限公司 离职'
   },
   {
     type: 'samll',
@@ -240,6 +251,14 @@ export const WORK_LIST = () => ([
     preImg: 'work2.png',
     bigImg: 'bigImg2.png',
     type: 'org'
+  },
+  {
+    title: '潮玩角色设计',
+    desc: '《潮玩角色设计-蒂娃》灵感来自于游戏《apex英雄》，对“生命线”这一游戏角色进行二次创作，融入潮流的元素并且制作Q版表情包。本次设计选择了高饱和度的色彩，给人强烈的视觉冲击。',
+    date: '2021年09月',
+    preImg: 'work7.png',
+    bigImg: 'bigImg7.png',
+    type: 'private'
   },
   {
     title: '扁平人物情绪版',

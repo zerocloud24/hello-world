@@ -147,7 +147,7 @@ export default {
         flex-direction: column;
         justify-content: space-between;
         .title {
-          font-size: 2rem;
+          font-size: 1.9rem;
           color: #0A0606;
           margin-bottom: 1.8rem;
           .tag {

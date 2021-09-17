@@ -72,7 +72,7 @@ export default {
 
 .menu-box {
   .menu-item {
-    font-size: 1.17rem;
+    font-size: 1.2rem;
     height: 2.33rem;
     line-height: 2.33rem;
     padding: 0 1.5rem;
@@ -86,7 +86,7 @@ export default {
     }
 
     &.is-bg {
-      font-size: 0.94rem;
+      font-size: 1rem;
       color: #fff;
       background-color: #5347CA;
       box-shadow: 0rem 0.5rem 1.1rem 0rem rgba(123, 111, 247, 0.46);

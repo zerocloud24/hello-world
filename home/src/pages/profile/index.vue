@@ -23,6 +23,9 @@ export default {
   .basic-info.container.d-flex
     .left-img
       .img-box
+        img.w-100(
+          :src="`${baseOss}personal_head.png`"
+        )
     .right-info
       .font-192.f316-font
         span {{ TextMap.basicInfo.split('|')[0] }}

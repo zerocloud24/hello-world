@@ -74,8 +74,11 @@ export default {
     }
   },
   watch: {
-    currentTab () {
+    currentTab (val) {
       window.scrollTo(0,0)
+      if (val !== 'works') {
+        this.defaultWork = ''
+      }
     }
   }
 }
@@ -104,9 +107,15 @@ html {
   }
 }
 
-@media only screen and (min-width: 1280px) and (max-width: 1920px){
+@media only screen and (min-width: 1280px) and (max-width: 1600px){
   html {
     font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 1600px) and (max-width: 1920px){
+  html {
+    font-size: 18px;
   }
 }
 
